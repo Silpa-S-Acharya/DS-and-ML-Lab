@@ -1,7 +1,7 @@
 1. 
 import numpy as np
 import matplotlib.pyplot as plt
-x=np.arrange(0,3*np.pi,0.1)
+x=np.arange(0,3*np.pi,0.1)
 y=np.sin(x)
 plt.plot(x,y)
 plt.show()
@@ -9,7 +9,7 @@ plt.show()
 2.
 import numpy as np
 import matplotlib.pyplot as plt
-x=np.arrange(0,3*np.pi,0.1)
+x=np.arange(0,3*np.pi,0.1)
 y_sin=np.sin(x)
 y_cos=np.cos(x)
 plt.plot(x,y_sin)
@@ -17,13 +17,12 @@ plt.plot(x,y_cos)
 plt.xlabel('xaxis label')
 plt.ylabel('yaxis label')
 plt.title('Sine and Cosine')
-plt.title(['Sine and Cosine'])
-plt.show()
+plt.title(
 
 3.
 import numpy as np
 import matplotlib.pyplot as plt
-x=np.arrange(0,3*np.pi,0.1)
+x=np.arange(0,3*np.pi,0.1)
 y_sin=np.sin(x)
 y_cos=np.cos(x)
 plt.subplot(2,1,1)
