@@ -22,7 +22,7 @@ print("Dataframe after replacing '$' and converting string to float of 'item_pri
 print(orders.item_price.str.replace('$', '').astype(float))
 print()
 
-6. import pandas as pd
+. import pandas as pd
 # read a dataset of top-rated IMDb movies into a DataFrame
 movies = pd.read_csv('http://bit.ly/imdbratings')
 print("Dataframe of top-rated IMDb movies: ")
@@ -47,7 +47,7 @@ print()
 print("3.using 'loc' method")
 print(movies.loc[movies.duration >= 200])
 
-7. import pandas as pd
+6. import pandas as pd
 ufo = pd.read_csv('http://bit.ly/uforeports')
 print(ufo.isnull().tail())
 print(ufo.notnull().tail())
@@ -85,7 +85,7 @@ people = pd.Series([3000000, 85000], index=['Albania', 'Andorra'], name='populat
 # concatenate the 'drinks' DataFrame with the 'population' Series (aligns by the index)
 print(pd.concat([drinks, people], axis=1).head())
 
-8. import pandas as pd
+7. import pandas as pd
 ufo = pd.read_csv('http://bit.ly/uforeports')
 print("Dataframe: ")
 print(ufo.head(3))
@@ -140,7 +140,7 @@ print("Rows in positions 0 through 2 (exclusive), all columns: ")
 print(ufo.iloc[0:2, :])
 print()
 
-3.  import pandas as pd
+8.  import pandas as pd
 print("Creating dummy variables in pandas: ")
 print()
 # read the training dataset from Kaggle's Titanic competition
