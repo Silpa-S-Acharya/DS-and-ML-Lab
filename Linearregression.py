@@ -4,7 +4,7 @@ import numpy as np
 
 from sklearn import datasets, linear_model
 
-from sklearn metrics import mean_squared_error, r2_score
+from sklearn.metrics import mean_squared_error, r2_score
 
 df = datasets.load_diabetes()
 
@@ -28,17 +28,17 @@ diabetes_y_train = diabetes_y[:-20]
 
 diabetes_y_test = diabetes_y[-20:]
 
-regr = linear_model Linear Regression()
+regr = linear_model.LinearRegression()
 
-regr fit(diabetes_X_train, diabetes_y_train)
+regr.fit(diabetes_X_train, diabetes_y_train)
 
 diabetes_y_pred = regr.predict(diabetes_X_test)
 
 print("Coefficients: \n", regr.coef_)
 
-print("Meansquarederror: %.2f"%mean_squared_error (diabetes_y_test, diabetes y_pred))
+print("Meansquarederror: %.2f"%mean_squared_error (diabetes_y_test, diabetes_y_pred))
 
-print("Coefficient of determination: %.2f % r2_score(diabetes_y_test, diabetes_y_pred))
+print("Coefficient of determination:%.2f "% r2_score(diabetes_y_test, diabetes_y_pred))
 
 plt.scatter(diabetes_X_test, diabetes_y_test, color="black")
 
