@@ -1,51 +1,27 @@
-import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
 
-import numpy as np
+from sklearn import datasets
 
-from sklearn import datasets. linear_model
+from sklearn import svm
 
-from sklearn metrics import mean squared error, r2_score
+from sklearn import metrics
 
-df = datasets.load_diabetes()
+cancer=datasets.load_breast_cancer()
 
-df['feature_names']
+x_train,x_test,y_train,y_test=train_test_split(cancer.data, cancer.target, test_size=0.3, random_state=109)
 
-diabetes_X, diabetes_y=datasets.load_diabetes(return_X_y=True)
+clf=svm.SVC(kernel='linear')
 
-diabetes X.shape
+clf.fit(x_train,y_train)
 
-diabetes y shape
+y_pred=clf.predict(x_test)
 
-diabetes X = diabetes_X[:, np.newaxis, 2]
+print("actual values",y_test)
 
-diabetes_X.shape
+print("predicted values",y_pred)
 
-diabetes_X_train = diabetes_X[:-20]
+print("accuracy" ,metrics.accuracy_score(y_test,y_pred))
 
-diabetes_X_test-diabetes_X[-20:]
+print("precision" ,metrics.precision_score(y_test,y_pred))
 
-diabetes_y_train diabetes_y[:-20]
-
-diabetes_y_test = diabetes_y[-20:]
-
-regr = linear_model LinearRegression()
-
-regr fit(diabetes_X_train, diabetes_y_train)
-
-diabetes_y_pred = regr.predict(diabetes_X_test)
-
-print("Coefficients: \n", regr.coef)
-
-print("Meansquarederror:%.2f%mean_squared error (diabetes_y_test, diabetes_y_pred))
-
-print("Coefficient of determination: %.2f" % 12_score (diabetes_y_test, diabetes_y_pred))
-
-plt.scatter(diabetes_X_test, diabetes_y_test, color="black")
-
-plt.plot(diabetes_X_test, diabetes_y_pred, color="blue". linewidth=3)
-
-plt.xlabel("age")
-
-plt.ylabel("diabetes progression")
-
-plt.xticks(0)
+print("recall",metrics.recall_score(y_test,y_pred))
